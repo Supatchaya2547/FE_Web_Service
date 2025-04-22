@@ -1,0 +1,136 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f6f9fc;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .websites-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    padding-top: 80px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b740f8;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .navbar-left .logo {
+    height: 32px;
+  }
+  
+  .navbar-right a {
+    margin-left: 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .navbar-right button {
+    margin-left: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #023e8a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .input-group input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .add-btn {
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .add-btn:hover {
+    background-color: #00367d;
+  }
+  
+  .back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #004aad;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .website-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .website-item {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .website-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+  
+  .website-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .website-item strong {
+    color: #1e3a8a;
+    font-size: 1.1rem;
+  }
+  
+  .delete-btn {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c53030;
+  }
+  

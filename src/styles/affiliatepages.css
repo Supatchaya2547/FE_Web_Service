@@ -1,0 +1,66 @@
+body {
+    background-color: #ede1ff;
+    font-family: sans-serif;
+  }
+  
+  .header {
+    background-color: #bba8ff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+  
+  .circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    background-color: black;
+  }
+  
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .parameter-box {
+    background-color: #998cff;
+    width: 350px;
+    height: 200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    font-weight: bold;
+  }
+  
+  .data-box {
+    width: 600px;
+    height: 50px;
+    border: 1px solid black;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+  
+  .red-note {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+  
+  .instruction-box {
+    width: 800px;
+    margin: 2rem auto;
+    font-size: 14px;
+  }
+  
