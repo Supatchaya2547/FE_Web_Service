@@ -22,10 +22,6 @@ const AffilicatePage = () => {
           parameter ( บอก api apec ว่ามีอะไรได้บ้าง )
         </div>
 
-        {/* API Display Box */}
-        <div className="mt-6 border border-black mx-auto w-[600px] h-[50px] flex items-center justify-center">
-          Data will show here
-        </div>
 
         {/* Form Section */}
         <div className="flex justify-center items-center mt-8 space-x-4">
@@ -37,6 +33,11 @@ const AffilicatePage = () => {
           </select>
           <input type="text" placeholder="jwt key" className="border border-black p-2" />
           <button className="bg-[#998cff] px-4 py-2">Get API</button>
+        </div>
+
+         {/* API Display Box */}
+         <div className="mt-6 border border-black mx-auto w-[600px] h-[50px] flex items-center justify-center">
+          Data will show here
         </div>
 
         {/* Red note */}

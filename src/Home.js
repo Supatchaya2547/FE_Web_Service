@@ -47,6 +47,13 @@ function Home() {
     return <div>กำลังโหลด...</div>;
   }
 
+  function copyToClipboard() {
+    const copyText = "Bearer "+keycloak.token;
+    navigator.clipboard.writeText(copyText)
+      .then(() => alert("คัดลอก token เรียบร้อยแล้ว!"))
+      .catch(err => alert("เกิดข้อผิดพลาด: " + err));
+  }
+
   return (
     <div style={{ padding: '20px', margin: '50px'}}>
       {keycloak.authenticated ? (
@@ -58,7 +65,7 @@ function Home() {
             disabled={loading}
             style={{ padding: '8px 16px', margin: '10px 0' }}
           >
-            {loading ? 'กำลังโหลด...' : 'เรียกข้อมูลจาก API'}
+            {loading ? 'กำลังโหลด...' : 'เรียกข้อมูลของคุณ'}
           </button>
           
           {error && (
@@ -83,10 +90,10 @@ function Home() {
           )}
 
           <button 
-            onClick={() => keycloak.logout()} 
+            onClick={() => copyToClipboard()} 
             style={{ padding: '8px 16px', margin: '10px 0' }}
           >
-            ออกจากระบบ
+            copy token
           </button>
         </>
       ) : (
