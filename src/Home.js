@@ -1,12 +1,14 @@
 // src/Home.js
 import React, { useEffect, useState } from 'react';
 import { useKeycloak } from '@react-keycloak/web';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const { keycloak, initialized } = useKeycloak();
   const [apiData, setApiData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
 
   useEffect(() => {
     if (initialized && !keycloak.authenticated) {

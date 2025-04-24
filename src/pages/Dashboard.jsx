@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useKeycloak } from '@react-keycloak/web';
-import { Link } from 'react-router-dom';
 import '../styles/Dashboard.css';
 
 const Dashboard = () => {
@@ -34,17 +33,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      {/* Navbar */}
-      {/* <div className="navbar">
-        <div className="logo-circle" />
-        <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/dashboard">Dashboard</Link>
-          <Link to="/website">Websites</Link>
-          <Link to="/courses">Insurances</Link>
-          <a href="#" onClick={() => keycloak.logout()}>Sign out</a>
-        </div>
-      </div> */}
+ 
 
       {/* Profile */}
       <div className="profile">
