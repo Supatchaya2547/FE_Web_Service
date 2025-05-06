@@ -12,10 +12,11 @@ const Navbar = () => {
       <div className="logo-circle"></div>
       <div className="nav-links">
         <Link to="/" className="nav-item">Home</Link>
-        <Link to="/dashboard" className="nav-item">Dashboard</Link>
+        {/* <Link to="/dashboard" className="nav-item">Dashboard</Link> */}
         <Link to="/website" className="nav-item">Websites</Link>
-        <Link to="/courses" className="nav-item">Courses</Link>
+        <Link to="/courses" className="nav-item">API Courses</Link>
         <Link to="/affiliate" className="nav-item">Affiliate</Link>
+        <Link to="/course_detail/1" className="nav-item">detail 1</Link>
         <button className="logout-button" onClick={() => keycloak.logout()}>Sign out</button>
       </div>
     </nav>

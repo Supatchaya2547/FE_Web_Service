@@ -33,7 +33,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
- 
+
 
       {/* Profile */}
       <div className="profile">
@@ -44,11 +44,11 @@ const Dashboard = () => {
         />
         <div>
           <h1 className="username">{keycloak.tokenParsed?.preferred_username}</h1>
-          
+
           <p>Websites ที่เลือกลงทะเบียน: <span className="highlight">5</span></p>
           <button className="website-button">เว็บไซต์</button>
           <p>คลิกทั้งหมด: <span className="highlight">72</span></p>
-          
+
         </div>
       </div>
 

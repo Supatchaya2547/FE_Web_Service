@@ -1,13 +1,14 @@
 // src/Home.js
 import React, { useEffect, useState } from 'react';
 import { useKeycloak } from '@react-keycloak/web';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const { keycloak, initialized } = useKeycloak();
   const [apiData, setApiData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
 
 
   useEffect(() => {
@@ -51,6 +52,7 @@ function Home() {
 
   function copyToClipboard() {
     const copyText = "Bearer "+keycloak.token;
+    // const copyText = keycloak.token;
     navigator.clipboard.writeText(copyText)
       .then(() => alert("คัดลอก token เรียบร้อยแล้ว!"))
       .catch(err => alert("เกิดข้อผิดพลาด: " + err));
@@ -97,6 +99,7 @@ function Home() {
           >
             copy token
           </button>
+          
         </>
       ) : (
         <div>กำลังเปลี่ยนเส้นทางไปยังหน้าเข้าสู่ระบบ...</div>
