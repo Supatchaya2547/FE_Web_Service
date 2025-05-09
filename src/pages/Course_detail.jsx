@@ -4,65 +4,57 @@ import '../styles/affiliatepages.css';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 
+// const Course_detail = () => {
+//   const { course_id } = useParams(); // ดึง course_id จาก path param
+
+//   const [apidata, setapidata] = useState(null);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+//   const placeholderImage = '../assets/images/placeholder.jpg';
+
+//   useEffect(() => {
+//     const sendRequest = async () => {
+//       try {
+//         // ส่งคำร้องขอแค่ course_id เท่านั้น
+//         const response = await axios.get(`http://localhost:8081/GetCoursesById/${course_id}`);
+        
+//         setapidata(response.data);
+//         setLoading(false);
+//       } catch (err) {
+//         setError(err);
+//         setLoading(false);
+//       }
+//     };
+
+//     sendRequest();
+//   }, [course_id]); // ทำงานเมื่อ course_id เปลี่ยนแปลง
+
 const Course_detail = () => {
-  const { id, url, act } = useParams(); // ดึงค่า id, url, act จาก URL
+  const { course_id, url, act } = useParams(); // ดึงค่า id, url, act จาก URL
   const [apidata, setapidata] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const placeholderImage = '../assets/images/placeholder.jpg';
 
-  // useEffect(() => {
-  //   // ส่งข้อมูลไปยัง API
-  //   const sendRequest = async () => {
-  //     try {
-  //       // ตรงนี้ไม่แน่ใจว่าจัส่งพวก url, act ไปยังไงดี หรือถ้ามีไแเดียก็แก้ได้นะ
-  //       // const response = await axios.get(`http://localhost:8081/GetCoursesById/${id}?url=${url}&act=${act}`);
-  //       const response = await axios.get(`http://localhost:8081/GetCoursesById/${id}`);
-  //       setapidata(response.data); // เก็บข้อมูลที่ได้รับจาก API
-  //       setLoading(false); // กำหนดให้ loading เป็น false เมื่อข้อมูลถูกโหลดเสร็จ
-  //     } catch (err) {
-  //       setError(err); // เก็บ error ถ้ามี
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   sendRequest();
-  // }, [id, url, act]); // เพิ่ม dependencies เพื่อให้ useEffect ทำงานเมื่อพารามิเตอร์เปลี่ยน
-  
   useEffect(() => {
+    // ส่งข้อมูลไปยัง API
     const sendRequest = async () => {
-      // try {
-      //   const response = await axios.get(`http://localhost:8081/GetCoursesById/${id}?url=${url}&act=${act}`, {
-      //     params: {
-      //       url,
-      //       act
-      //     }
-      //   });
-
       try {
-        const queryParams = {};
-        if (url) queryParams.url = url;
-        if (act) queryParams.act = act;
-  
-        const response = await axios.get(`http://localhost:8081/GetCoursesById/${id}?url=${url}&act=${act}`, {
-          params: queryParams
-        });
-
-        setapidata(response.data);
-        setLoading(false);
+        // ตรงนี้ไม่แน่ใจว่าจัส่งพวก url, act ไปยังไงดี หรือถ้ามีไแเดียก็แก้ได้นะ
+        const response = await axios.get(`http://localhost:8081/GetCoursesById/${course_id}?url=${url}&act=${act}`);
+        setapidata(response.data); // เก็บข้อมูลที่ได้รับจาก API
+        setLoading(false); // กำหนดให้ loading เป็น false เมื่อข้อมูลถูกโหลดเสร็จ
       } catch (err) {
-        setError(err);
+        setError(err); // เก็บ error ถ้ามี
         setLoading(false);
       }
     };
-  
-    sendRequest();
-  }, [id, url, act]);
-  
 
+    sendRequest();
+  }, [course_id, url, act]); // เพิ่ม dependencies เพื่อให้ useEffect ทำงานเมื่อพารามิเตอร์เปลี่ยน
 
   if (loading) return <p>กำลังโหลด...</p>;
-  if (error) return <p>เกิดข้อผิดพลาด: {error.message}</p>;  // แสดงข้อความเมื่อเกิดข้อผิดพลาด
+  if (error) return <p>เกิดข้อผิดพลาด: {error.message}</p>;
   if (!apidata) return <p>ไม่พบ course ที่คุณต้องการ</p>;
 
   return (

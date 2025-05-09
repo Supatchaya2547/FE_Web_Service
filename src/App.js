@@ -74,7 +74,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/website" element={<Websites />} />
-            <Route path="/course_detail/:id/:url?/:act?" element={<Course_detail />} />
+            <Route path="/course_detail/:course_id/:url?/:act?" element={<Course_detail />} />
           </Routes>
         </div>
       </Router>
@@ -83,4 +83,6 @@ function App() {
 }
 
 export default App;
+
+// <Route path="/course_detail/:course_id" element={<Course_detail />} />
 
